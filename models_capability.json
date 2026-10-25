@@ -1,0 +1,2071 @@
+[
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-6.1-sol",
+  "name": "GPT 6.1 Sol",
+  "description": "OpenAI model for complex coding and agentic workflows with a 1.05M-token context window.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.02 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.25 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.2 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.04,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.04 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.5,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.5 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.4,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.4 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 1.5,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-sonnet-5.5",
+  "name": "Claude Sonnet 5.5",
+  "description": "High-performance Sonnet-class model optimized for coding, agentic workflows, tool use, and professional knowledge work, with adaptive thinking and long-context capabilities.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.03 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.4,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 0.4 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.375 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.3 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-opus-5.5",
+  "name": "Claude Opus 5.5",
+  "description": "Anthropic model for long-running agentic coding and knowledge work, with a 1M-token context window.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.02 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.8,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 0.8 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.5 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.4,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.4 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 2 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-6-luna",
+  "name": "GPT 6 Luna",
+  "description": "OpenAI model for focused, high-volume tasks with a 1.05M-token context window.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.001,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.001 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0125,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.0125 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.01,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.01 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.05,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.05 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.002,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.002 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.025,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.025 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.02,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.02 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 0.075,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 0.075 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-6-sol",
+  "name": "GPT 6 Sol",
+  "description": "OpenAI model for complex coding and agentic workflows with a 1.05M-token context window.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.02 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.25 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.2 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.04,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.04 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.5,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.5 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.4,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.4 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 1.5,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "google_gemini_generate_content",
+  "id": "google/gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash",
+  "description": "Fast, cost-efficient multimodal model with strong coding, spatial reasoning, and agentic execution capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0075,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.005 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.008333 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.075,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.05 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.375,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.3 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-6-astra",
+  "name": "GPT 6 Astra",
+  "description": "OpenAI's flagship and most capable GPT-6 Astra model for demanding end‑to‑end tasks, advanced analysis, software engineering, deep research, and agentic computer/browser use.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.2,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 2.5,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 2,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 7.5,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 3 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "description": "Fast and cost-efficient MoE reasoning model with a 1M-token context window and strong coding, math, and agentic capabilities. With experimental vision support.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/deepseek.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.002,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.145 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 1.74 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3.48 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "alibaba/qwen-3.8-max",
+  "name": "Qwen 3.8 Max Preview",
+  "description": "Qwen's most capable preview model for advanced reasoning, multimodal understanding, coding, and agentic tasks.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.002286,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.0128571 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02857,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.1607143 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.171,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.1285714 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.514,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.7714286 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-opus-5",
+  "name": "Claude Opus 5",
+  "description": "Anthropic's advanced Opus-class model for complex reasoning, coding, and long-running agentic and professional tasks.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 1.5 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.625,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 2.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash",
+  "description": "Fast and cost-efficient MoE reasoning model with a 1M-token context window and strong coding, math, and agentic capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/deepseek.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.002,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.145 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 1.74 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3.48 credits."
+   }
+  }
+ },
+ {
+  "protocol": "google_gemini_generate_content",
+  "id": "google/gemini-3.6-flash",
+  "name": "Gemini 3.6 Flash",
+  "description": "Fast, cost-efficient multimodal model with strong coding, spatial reasoning, and agentic execution capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.015,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.005 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.008333 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.15,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.05 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.75,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.3 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "moonshotai/kimi-k3",
+  "name": "Kimi K3",
+  "description": "Frontier multimodal model with a 1M-token context window, built for long-horizon coding, professional knowledge work, and deep reasoning.",
+  "type": "LLM",
+  "price_tier": "Medium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/moonshotai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.03,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.016 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.3,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.3,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.095 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.4 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT 5.6 Sol",
+  "description": "OpenAI's flagship and most capable GPT-5.6 model for software engineering, computer use, professional knowledge work, scientific research, and cybersecurity.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.04,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.4,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.08,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.1 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 1,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 1.25 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.8,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 1 credit."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 3,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 4.5 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-5.6-terra",
+  "name": "GPT 5.6 Terra",
+  "description": "Strong lower-cost GPT-5.6 model balancing capability, speed, and cost for everyday software engineering and professional work.",
+  "type": "LLM",
+  "price_tier": "Medium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.025 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.3125 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.25 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.04,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.5,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.4,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 1.8,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 2.25 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-5.6-luna",
+  "name": "GPT 5.6 Luna",
+  "description": "OpenAI's fastest and most cost-efficient GPT-5.6 model for responsive coding, agentic workflows, and everyday tasks.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.002,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.01 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.025,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.125 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.1 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.12,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.6 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.004,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.02 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.05,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.25 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.04,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 0.2 credits."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 0.18,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 0.9 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "alibaba/qwen-3.7-plus",
+  "name": "Qwen 3.7 Plus",
+  "description": "Cost-efficient multimodal model balancing performance, speed, and cost, with a 1M-token context window, vision understanding, and agentic coding capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0022857,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.000022857 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0285714,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.000285714 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0228571,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.000228571 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.0914286,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.000914286 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-sonnet-5",
+  "name": "Claude Sonnet 5",
+  "description": "High-performance Sonnet-class model optimized for coding, agentic workflows, tool use, and professional knowledge work, with adaptive thinking and long-context capabilities.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.03 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.4,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 0.4 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.375 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.3 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "description": "Coding-focused thinking model optimized for long-horizon software engineering, agentic task execution, tool use, and reliable multi-turn code workflows.",
+  "type": "LLM",
+  "price_tier": "Medium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/moonshotai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.01857,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.016 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0929,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.095 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.3857,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.4 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "z-ai/glm-5.2",
+  "name": "GLM 5.2",
+  "description": "Flagship 1M-context agentic engineering model for project-level coding, long-horizon planning, tool use, and iterative software development workflows.",
+  "type": "LLM",
+  "price_tier": "Medium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/z-ai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.026,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.026 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.14,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.14 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.44,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.44 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "minimax/minimax-m3",
+  "name": "MiniMax M3",
+  "description": "Native multimodal 1M-context model optimized for long-horizon coding, agentic collaboration, tool use, and complex multimodal workflows.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/minimax.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "cache_read",
+    "price_per_k_credits": 0.006,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.006 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.03,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.03 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.12,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.12 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "alibaba/qwen-3.7-max",
+  "name": "Qwen 3.7 Max Preview",
+  "description": "High-performance preview model with strong reasoning, coding, instruction following, and agent task capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0171429,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.0128571 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2142857,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.1607143 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1714286,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.1285714 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.5142857,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.7714286 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-opus-4.8",
+  "name": "Claude Opus 4.8",
+  "description": "Anthropic's most powerful model for complex reasoning, coding, and long-running professional tasks.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 1.0 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.625,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 2.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "google_gemini_generate_content",
+  "id": "google/gemini-3.5-flash",
+  "name": "Gemini 3.5 Flash",
+  "description": "Fast and cost-effective model for lighter tasks.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.015,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.005 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.008333,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.008333 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.15,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.05 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.9,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.3 credits."
+   }
+  }
+ },
+ {
+  "id": "kuaishou/kling-3.0",
+  "name": "Kling 3.0",
+  "description": "High-quality 1080p video generation with flexible aspect ratios and stable motion.",
+  "type": "Video",
+  "price_tier": "Moderate",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/kuaishou.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_credit": {
+    "sku_type": "output",
+    "price_per_k_credits": 14000,
+    "explanation": "video_credit refers to one billable video generation credit consumed by Kling 3.0, 1000 video_credit costs 14000 credits."
+   }
+  }
+ },
+ {
+  "id": "doubao/seedance-2",
+  "name": "Seedance 2",
+  "description": "Cost-efficient video generation with stable motion, flexible aspect ratios, and clear subject consistency.",
+  "type": "Video",
+  "price_tier": "Low",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/doubao.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_token_480p_false": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.07,
+    "explanation": "480p video without reference video input: 1.07 credits per 1000 tokens."
+   },
+   "video_token_480p_true": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.64,
+    "explanation": "480p video with reference video input: 0.64 credits per 1000 tokens."
+   },
+   "video_token_720p_false": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.07,
+    "explanation": "720p video without reference video input: 1.07 credits per 1000 tokens."
+   },
+   "video_token_720p_true": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.64,
+    "explanation": "720p video with reference video input: 0.64 credits per 1000 tokens."
+   }
+  }
+ },
+ {
+  "id": "doubao/seedream-5",
+  "name": "Seedream 5",
+  "description": "High-quality and production-ready image generation with flexible aspect ratios and resolutions.",
+  "type": "Image",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/doubao.svg",
+  "recommended": false,
+  "sku_prices": {
+   "image_count": {
+    "sku_type": "output",
+    "price_per_k_credits": 3100,
+    "explanation": "image_count refers to one generated image, 1000 image_count costs 3100 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "alibaba/qwen-3.6-max-preview",
+  "name": "Qwen 3.6 Max Preview",
+  "description": "High-performance preview model with strong reasoning, coding, instruction following, and agent task capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0128571,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.0128571 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1607143,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.1607143 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1285714,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.1285714 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.7714286,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.7714286 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "alibaba/qwen-3.6-plus",
+  "name": "Qwen 3.6 Plus",
+  "description": "High-performance general-purpose model with strong reasoning, coding, instruction following, and agent task capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.00572,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.00572 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0286,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.0286 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.1714,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.1714 credits."
+   }
+  }
+ },
+ {
+  "id": "alibaba/wan-2.7",
+  "name": "Wan 2.7",
+  "description": "Wan 2.7 generates high-quality 720p and 1080p videos from text or images with audio support.",
+  "type": "Video",
+  "price_tier": "Moderate",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/qwen.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_second_1080p": {
+    "sku_type": "output",
+    "price_per_k_credits": 13890,
+    "explanation": "video_second_1080p refers to one second of 1080p video, 1000 video_second_1080p costs 13890 credits."
+   },
+   "video_second_720p": {
+    "sku_type": "output",
+    "price_per_k_credits": 8330,
+    "explanation": "video_second_720p refers to one second of 720p video, 1000 video_second_720p costs 8330 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-5.5",
+  "name": "GPT 5.5",
+  "description": "OpenAI's latest frontier model, delivering stronger reasoning, higher-quality outputs, and reliable performance for complex real-world tasks.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 3,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3 credits."
+   }
+  },
+  "pricing_tiers": [
+   {
+    "min_tokens": 272001,
+    "sku_prices": {
+     "cache_read_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0.1,
+      "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.1 credits."
+     },
+     "cache_write_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 0,
+      "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 1.25 credits."
+     },
+     "input_token": {
+      "sku_type": "input",
+      "price_per_k_credits": 1,
+      "explanation": "input_token refers to one input token, 1000 input_token costs 1 credit."
+     },
+     "output_token": {
+      "sku_type": "output",
+      "price_per_k_credits": 4.5,
+      "explanation": "output_token refers to one output token, 1000 output_token costs 4.5 credits."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro",
+  "description": "Advanced MoE reasoning model with 1M context, strong coding, math, and long-agent task performance.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/deepseek.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0044,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.145 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.00083,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.132,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 1.74 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.396,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 3.48 credits."
+   }
+  }
+ },
+ {
+  "id": "alibaba/happyhorse-1.0",
+  "name": "HappyHorse 1.0",
+  "description": "HappyHorse AI turns text or images into remarkable 1080p cinematic video.",
+  "type": "Video",
+  "price_tier": "Moderate",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/happyhorse.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_second_1080p": {
+    "sku_type": "output",
+    "price_per_k_credits": 22220,
+    "explanation": "video_second_1080p refers to one second of 1080p video, 1000 video_second_1080p costs 22220 credits."
+   },
+   "video_second_720p": {
+    "sku_type": "output",
+    "price_per_k_credits": 12500,
+    "explanation": "video_second_720p refers to one second of 720p video, 1000 video_second_720p costs 12500 credits."
+   }
+  }
+ },
+ {
+  "id": "openai/gpt-image-2",
+  "name": "GPT Image 2",
+  "description": "GPT Image 2 is OpenAI's state-of-the-art image generation and editing model.",
+  "type": "Image",
+  "price_tier": "High",
+  "speed": "Slow",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "image_count_1k_16:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 16000,
+    "explanation": "image_count_1k_16:9 refers to one 16:9 1k-resolution image, 1000 image_count_1k_16:9 costs 16000 credits."
+   },
+   "image_count_1k_1:1": {
+    "sku_type": "output",
+    "price_per_k_credits": 22000,
+    "explanation": "image_count_1k_1:1 refers to one 1:1 1k-resolution image, 1000 image_count_1k_1:1 costs 22000 credits."
+   },
+   "image_count_1k_21:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 17000,
+    "explanation": "image_count_1k_21:9 refers to one 21:9 1k-resolution image, 1000 image_count_1k_21:9 costs 17000 credits."
+   },
+   "image_count_1k_3:4": {
+    "sku_type": "output",
+    "price_per_k_credits": 17000,
+    "explanation": "image_count_1k_3:4 refers to one 3:4 1k-resolution image, 1000 image_count_1k_3:4 costs 17000 credits."
+   },
+   "image_count_1k_4:3": {
+    "sku_type": "output",
+    "price_per_k_credits": 15000,
+    "explanation": "image_count_1k_4:3 refers to one 4:3 1k-resolution image, 1000 image_count_1k_4:3 costs 15000 credits."
+   },
+   "image_count_1k_9:16": {
+    "sku_type": "output",
+    "price_per_k_credits": 17000,
+    "explanation": "image_count_1k_9:16 refers to one 9:16 1k-resolution image, 1000 image_count_1k_9:16 costs 17000 credits."
+   },
+   "image_count_2k_16:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 23000,
+    "explanation": "image_count_2k_16:9 refers to one 16:9 2k-resolution image, 1000 image_count_2k_16:9 costs 23000 credits."
+   },
+   "image_count_2k_1:1": {
+    "sku_type": "output",
+    "price_per_k_credits": 32000,
+    "explanation": "image_count_2k_1:1 refers to one 1:1 2k-resolution image, 1000 image_count_2k_1:1 costs 32000 credits."
+   },
+   "image_count_2k_21:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 24000,
+    "explanation": "image_count_2k_21:9 refers to one 21:9 2k-resolution image, 1000 image_count_2k_21:9 costs 24000 credits."
+   },
+   "image_count_2k_3:4": {
+    "sku_type": "output",
+    "price_per_k_credits": 24000,
+    "explanation": "image_count_2k_3:4 refers to one 3:4 2k-resolution image, 1000 image_count_2k_3:4 costs 24000 credits."
+   },
+   "image_count_2k_4:3": {
+    "sku_type": "output",
+    "price_per_k_credits": 22000,
+    "explanation": "image_count_2k_4:3 refers to one 4:3 2k-resolution image, 1000 image_count_2k_4:3 costs 22000 credits."
+   },
+   "image_count_2k_9:16": {
+    "sku_type": "output",
+    "price_per_k_credits": 24000,
+    "explanation": "image_count_2k_9:16 refers to one 9:16 2k-resolution image, 1000 image_count_2k_9:16 costs 24000 credits."
+   },
+   "image_count_4k_16:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 41000,
+    "explanation": "image_count_4k_16:9 refers to one 16:9 4k-resolution image, 1000 image_count_4k_16:9 costs 41000 credits."
+   },
+   "image_count_4k_1:1": {
+    "sku_type": "output",
+    "price_per_k_credits": 56000,
+    "explanation": "image_count_4k_1:1 refers to one 1:1 4k-resolution image, 1000 image_count_4k_1:1 costs 56000 credits."
+   },
+   "image_count_4k_21:9": {
+    "sku_type": "output",
+    "price_per_k_credits": 44000,
+    "explanation": "image_count_4k_21:9 refers to one 21:9 4k-resolution image, 1000 image_count_4k_21:9 costs 44000 credits."
+   },
+   "image_count_4k_3:4": {
+    "sku_type": "output",
+    "price_per_k_credits": 44000,
+    "explanation": "image_count_4k_3:4 refers to one 3:4 4k-resolution image, 1000 image_count_4k_3:4 costs 44000 credits."
+   },
+   "image_count_4k_4:3": {
+    "sku_type": "output",
+    "price_per_k_credits": 38000,
+    "explanation": "image_count_4k_4:3 refers to one 4:3 4k-resolution image, 1000 image_count_4k_4:3 costs 38000 credits."
+   },
+   "image_count_4k_9:16": {
+    "sku_type": "output",
+    "price_per_k_credits": 44000,
+    "explanation": "image_count_4k_9:16 refers to one 9:16 4k-resolution image, 1000 image_count_4k_9:16 costs 44000 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-opus-4.7",
+  "name": "Claude Opus 4.7",
+  "description": "Anthropic's most powerful model for complex reasoning, coding, and long-running professional tasks.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 1.0 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.625,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 2.5 credits."
+   }
+  }
+ },
+ {
+  "id": "suno/suno-v5",
+  "name": "Suno V5",
+  "description": "Features intelligent composition, persistent voice & instrument memory, and uncompromised performance—delivering 10× faster, higher-quality music generation.",
+  "type": "Music",
+  "price_tier": "Moderate",
+  "speed": "Slow",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/suno.svg",
+  "recommended": false,
+  "sku_prices": {
+   "music_count": {
+    "sku_type": "output",
+    "price_per_k_credits": 5000,
+    "explanation": "music_count refers to one generated music track, 1000 music_count costs 5000 credits."
+   }
+  }
+ },
+ {
+  "id": "mureka/mureka-v8",
+  "name": "Mureka V8",
+  "description": "A next-gen AI music model with richer melodies, expressive vocals, and deeper emotion—powered by MusiCoT to mirror human creativity and produce commercially ready tracks.",
+  "type": "Music",
+  "price_tier": "Low",
+  "speed": "Slow",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/mureka.svg",
+  "recommended": false,
+  "sku_prices": {
+   "music_count": {
+    "sku_type": "output",
+    "price_per_k_credits": 4500,
+    "explanation": "music_count refers to one generated music track, 1000 music_count costs 4500 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-opus-4.6",
+  "name": "Claude Opus 4.6",
+  "description": "Anthropic's strongest model for coding and long-running professional tasks.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.05,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.05 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 1,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 1.0 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.625,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.625 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.5,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.5 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 2.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 2.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-sonnet-4.6",
+  "name": "Claude Sonnet 4.6",
+  "description": "Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.03,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.03 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.6,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 0.6 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.375,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.375 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.3,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.3 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "description": "Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. ",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/moonshotai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0225,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.0225 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.045,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.045 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.22,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.22 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "google/gemini-3.1-flash-lite-preview",
+  "name": "Gemini 3.1 Flash Lite Preview",
+  "description": "Google's high-efficiency model optimized for high-volume use cases.",
+  "type": "LLM",
+  "price_tier": "Moderate",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0025,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.0025 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.008333,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.008333 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.025,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.025 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.15,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.15 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "z-ai/glm-5",
+  "name": "GLM 5",
+  "description": "Z.ai's flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. ",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/z-ai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.016,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.016 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.08,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.08 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.256,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.256 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "minimax/minimax-m2.5",
+  "name": "Minimax M2.5",
+  "description": "A lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. ",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/minimax.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.003,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.003 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0295,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.0295 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.12,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.12 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "openai/gpt-5.4-pro",
+  "name": "GPT 5.4 Pro",
+  "description": "OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. ",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 3,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 3 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 18,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 18 credits."
+   }
+  }
+ },
+ {
+  "id": "google/gemini-3.1-flash-image-preview",
+  "name": "Nano Banana 2",
+  "description": "Officially known as Gemini 3 Flash Image, this is a state-of-the-art model that powers advanced image generation and editing. ",
+  "type": "Image",
+  "price_tier": "Moderate",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "image_count_1k": {
+    "sku_type": "output",
+    "price_per_k_credits": 6700,
+    "explanation": "image_count_1k refers to one 1k-resolution image, 1000 image_count_1k costs 6700 credits."
+   },
+   "image_count_2k": {
+    "sku_type": "output",
+    "price_per_k_credits": 10100,
+    "explanation": "image_count_2k refers to one 2k-resolution image, 1000 image_count_2k costs 10100 credits."
+   },
+   "image_count_4k": {
+    "sku_type": "output",
+    "price_per_k_credits": 15100,
+    "explanation": "image_count_4k refers to one 4k-resolution image, 1000 image_count_4k costs 15100 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_responses",
+  "id": "openai/gpt-5.4",
+  "name": "GPT 5.4",
+  "description": "OpenAI's latest frontier model, delivering stronger reasoning, higher-quality outputs, and reliable performance for complex real-world tasks.",
+  "type": "LLM",
+  "price_tier": "High",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.025,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.025 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.25,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.25 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "anthropic/claude-sonnet-4.5",
+  "name": "Claude Sonnet 4.5",
+  "description": "Clear instruction following and high-quality long-form writing, well-suited for analysis and content-heavy tasks.",
+  "type": "LLM",
+  "price_tier": "Moderate",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/anthropic.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.03,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.03 credits."
+   },
+   "cache_write_1h_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.6,
+    "explanation": "cache_write_1h_token refers to one 1-hour-TTL cache write token, 1000 cache_write_1h_token costs 0.6 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.375,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.375 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.3,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.3 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.5,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.5 credits."
+   }
+  }
+ },
+ {
+  "protocol": "anthropic_messages",
+  "id": "google/gemini-3.1-pro-preview",
+  "name": "Gemini 3.1 Pro Preview",
+  "description": "Gemini 3.1 Pro Preview is Google's frontier reasoning model.",
+  "type": "LLM",
+  "price_tier": "Moderate",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.02 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0375,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0.0375 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.2,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.2 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 1.2,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 1.2 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "openai/gpt-5.2-pro",
+  "name": "GPT-5.2 Pro",
+  "description": "High-precision reasoning and generation for complex logic and planning.",
+  "type": "LLM",
+  "price_tier": "Premium",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 2.1,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 2.1 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 16.8,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 16.8 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "moonshotai/kimi-k2.6",
+  "name": "Kimi K2.6",
+  "description": "Native multimodal agent model with strong coding, reasoning, tool calling, and long-context capabilities.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/moonshotai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.01857,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.016 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0929,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.095 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.3857,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.4 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "z-ai/glm-5.1",
+  "name": "GLM 5.1",
+  "description": "Long-horizon agentic engineering model built for autonomous planning, coding, tool use, and iterative optimization.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/z-ai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.02286,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.026 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.1143,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.14 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.4,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.44 credits."
+   }
+  }
+ },
+ {
+  "protocol": "openai_chat_completions",
+  "id": "minimax/minimax-m2.7",
+  "name": "MiniMax M2.7",
+  "description": "Engineering-focused model optimized for coding, reasoning, agent workflows, office tasks, and productivity automation.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/minimax.svg",
+  "recommended": false,
+  "sku_prices": {
+   "cache_read_token": {
+    "sku_type": "cache_read",
+    "price_per_k_credits": 0.006,
+    "explanation": "cache_read_token refers to one cache read token, 1000 cache_read_token costs 0.006 credits."
+   },
+   "cache_write_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0,
+    "explanation": "cache_write_token refers to one cache write token, 1000 cache_write_token costs 0 credits."
+   },
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.03,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.03 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0.12,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0.12 credits."
+   }
+  }
+ },
+ {
+  "id": "doubao/seedream-4.5",
+  "name": "Seedream 4.5",
+  "description": "High-quality and production-ready image generation with reasonable price.",
+  "type": "Image",
+  "price_tier": "Low",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/doubao.svg",
+  "recommended": false,
+  "sku_prices": {
+   "image_count": {
+    "sku_type": "output",
+    "price_per_k_credits": 4000,
+    "explanation": "image_count refers to one generated image, 1000 image_count costs 4000 credits."
+   }
+  }
+ },
+ {
+  "id": "google/gemini-3-pro-image-preview",
+  "name": "Nano Banana Pro",
+  "description": "Premium output with deep logic and accurate text rendering.",
+  "type": "Image",
+  "price_tier": "High",
+  "speed": "Slow",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "image_count_1k": {
+    "sku_type": "output",
+    "price_per_k_credits": 13400,
+    "explanation": "image_count_1k refers to one 1k-resolution image, 1000 image_count_1k costs 13400 credits."
+   },
+   "image_count_2k": {
+    "sku_type": "output",
+    "price_per_k_credits": 13400,
+    "explanation": "image_count_2k refers to one 2k-resolution image, 1000 image_count_2k costs 13400 credits."
+   },
+   "image_count_4k": {
+    "sku_type": "output",
+    "price_per_k_credits": 24000,
+    "explanation": "image_count_4k refers to one 4k-resolution image, 1000 image_count_4k costs 24000 credits."
+   }
+  }
+ },
+ {
+  "id": "doubao/seedance-1.0-pro",
+  "name": "Seedance 1.0 Pro",
+  "description": "Cost-efficient video generation with stable motion and clear subject consistency.",
+  "type": "Video",
+  "price_tier": "Low",
+  "speed": "Medium",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/doubao.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_second_1080p": {
+    "sku_type": "output",
+    "price_per_k_credits": 9000,
+    "explanation": "video_second_1080p refers to one second of 1080p video, 1000 video_second_1080p costs 9000 credits."
+   },
+   "video_second_480p": {
+    "sku_type": "output",
+    "price_per_k_credits": 3000,
+    "explanation": "video_second_480p refers to one second of 480p video, 1000 video_second_480p costs 3000 credits."
+   },
+   "video_second_720p": {
+    "sku_type": "output",
+    "price_per_k_credits": 6000,
+    "explanation": "video_second_720p refers to one second of 720p video, 1000 video_second_720p costs 6000 credits."
+   }
+  }
+ },
+ {
+  "id": "google/veo-3.1",
+  "name": "Veo 3.1",
+  "description": "Cinematic generation with native audio-visual sync.",
+  "type": "Video",
+  "price_tier": "Premium",
+  "speed": "Slow",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/google.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_second": {
+    "sku_type": "output",
+    "price_per_k_credits": 40000,
+    "explanation": "video_second refers to one second of video, 1000 video_second costs 40000 credits."
+   }
+  }
+ },
+ {
+  "id": "openai/sora-2",
+  "name": "Sora2",
+  "description": "Fast, aesthetic video generation optimized for social media.",
+  "type": "Video",
+  "price_tier": "Moderate",
+  "speed": "Fast",
+  "logo": "https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/public/openai.svg",
+  "recommended": false,
+  "sku_prices": {
+   "video_second": {
+    "sku_type": "output",
+    "price_per_k_credits": 10000,
+    "explanation": "video_second refers to one second of video, 1000 video_second costs 10000 credits."
+   }
+  }
+ },
+ {
+  "protocol": "typesafe_decisions",
+  "id": "typesafe/jev-1.13",
+  "name": "Jev 1.13",
+  "description": "Structured judgments: classification (Choice), scoring (Score), and yes/no probabilities (Noul). Does not generate text or support chat, streaming, or tools.",
+  "type": "LLM",
+  "price_tier": "Low",
+  "recommended": false,
+  "sku_prices": {
+   "input_token": {
+    "sku_type": "input",
+    "price_per_k_credits": 0.0042,
+    "explanation": "input_token refers to one input token, 1000 input_token costs 0.0042 credits."
+   },
+   "output_token": {
+    "sku_type": "output",
+    "price_per_k_credits": 0,
+    "explanation": "output_token refers to one output token, 1000 output_token costs 0 credits."
+   }
+  }
+ }
+]

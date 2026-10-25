@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>反代本地 · 控制台</title>
+<style>
+  :root{--bg:#0b0d12;--panel:#12151d;--panel2:#171b25;--line:#232838;--fg:#e7eaf3;--dim:#8b93a7;
+        --acc:#6ea8fe;--ok:#3ddc97;--warn:#f5c451;--bad:#ff6b6b;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;display:flex;flex-direction:column}
+  header{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+  .logo{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#6ea8fe,#a78bfa,#f472b6)}
+  header b{font-weight:600}
+  .pill{font:12px/1 var(--mono);padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:var(--dim);background:var(--panel2);white-space:nowrap}
+  .pill.ok{color:var(--ok);border-color:#1f4f3c}.pill.bad{color:var(--bad);border-color:#4b2222}.pill.warn{color:var(--warn);border-color:#4a3d1c}
+  .grow{flex:1}
+  main{flex:1;display:grid;grid-template-columns:320px 1fr;min-height:0}
+  aside{border-right:1px solid var(--line);background:var(--panel);padding:12px;overflow:auto;display:flex;flex-direction:column;gap:12px}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld label{font-size:11px;color:var(--dim);letter-spacing:.4px;text-transform:uppercase}
+  select,input,textarea{width:100%;background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:7px 9px;font:inherit;outline:none}
+  select:focus,input:focus,textarea:focus{border-color:#33507f}
+  textarea{resize:vertical;font:12px/1.5 var(--mono)}
+  button{cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);padding:7px 11px;font:inherit;transition:.15s}
+  button:hover{border-color:#33507f;background:#1b2130}
+  button.primary{background:linear-gradient(135deg,#2b5dae,#4a3f9e);border-color:#3b5a94;font-weight:600}
+  button.sm{padding:3px 7px;font-size:11px;border-radius:6px}
+  button.danger:hover{border-color:#7a2b2b;background:#2a1616}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .row{display:flex;gap:6px}.row>*{flex:1}
+  .chk{display:flex;gap:7px;align-items:center;font-size:12px;color:var(--dim);cursor:pointer}
+  .chk input{width:auto;flex:none}
+  .kv{font:11px/1.7 var(--mono);color:var(--dim);word-break:break-all}
+  .kv b{color:var(--fg);font-weight:500}
+  .acct-row{display:flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);margin-bottom:5px;font-size:11.5px}
+  .acct-row.on{border-color:#2b5dae;background:#16203a}
+  .dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .mail{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cr{font:10.5px var(--mono);color:var(--dim);white-space:nowrap}
+  .tabs{display:flex;gap:2px;padding:6px 14px 0;border-bottom:1px solid var(--line);background:var(--panel)}
+  .tab{padding:7px 13px;border:1px solid transparent;border-bottom:none;border-radius:8px 8px 0 0;color:var(--dim);cursor:pointer;font-size:13px}
+  .tab.on{background:var(--bg);border-color:var(--line);color:var(--fg);margin-bottom:-1px}
+  .pane{flex:1;min-height:0;display:none;flex-direction:column}
+  .pane.on{display:flex}
+  #log{flex:1;overflow:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+  .msg{max-width:min(860px,100%);display:flex;flex-direction:column;gap:5px}
+  .msg .who{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--dim)}
+  .msg .bubble{background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:9px 12px;white-space:pre-wrap;word-break:break-word}
+  .msg.user{align-self:flex-end;align-items:flex-end}
+  .msg.user .bubble{background:#1d2a44;border-color:#2b4370}
+  .msg.tool .bubble{background:#101a17;border-color:#1f3d33;font:11.5px/1.6 var(--mono);color:#a9e8cd;max-height:240px;overflow:auto}
+  .cursor::after{content:"▌";animation:blink 1s steps(2) infinite;color:var(--acc)}
+  @keyframes blink{50%{opacity:0}}
+  #stats{font:11px/1.5 var(--mono);color:var(--dim);padding:0 16px 8px;display:flex;gap:14px;flex-wrap:wrap}
+  #stats b{color:var(--fg);font-weight:500}
+  footer{border-top:1px solid var(--line);background:var(--panel);padding:10px 14px;display:flex;gap:8px;align-items:flex-end}
+  footer textarea{min-height:42px;max-height:160px}
+  .empty{color:var(--dim);text-align:center;margin:auto;font-size:13px;line-height:2}
+  .tablewrap{flex:1;overflow:auto;padding:12px 16px}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{color:var(--dim);font-weight:500;position:sticky;top:0;background:var(--bg);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  td.mono{font-family:var(--mono);font-size:11.5px}
+  tr.dim{opacity:.45}
+  .ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+  .bar{height:5px;border-radius:3px;background:#20263a;overflow:hidden;min-width:50px}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#2b5dae,#3ddc97)}
+  #banner{display:none;padding:8px 14px;background:#2a1e12;border-bottom:1px solid #4a3418;color:#f0c98a;font-size:12.5px}
+  #banner.show{display:block}
+  #toast{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:9}
+  .toast{background:#16203a;border:1px solid #2b5dae;color:#dbe6ff;padding:8px 12px;border-radius:8px;font-size:12.5px;max-width:360px}
+  .toast.bad{border-color:#7a2b2b;background:#2a1616;color:#ffd6d6}
+  .pill.group{color:#9ecbff;border-color:#2b5dae;text-decoration:none}
+  .pill.group:hover{background:#16203a}
+  #welcome{position:fixed;inset:0;background:rgba(4,6,10,.72);display:none;align-items:center;justify-content:center;z-index:20;backdrop-filter:blur(2px)}
+  #welcome.show{display:flex}
+  .wcard{width:min(420px,92vw);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .wcard h3{margin:0 0 6px;font-size:17px}
+  .wcard p{margin:0 0 14px;color:var(--dim);font-size:13px;line-height:1.8}
+  .wcard .qno{font:600 26px/1.2 var(--mono);color:#9ecbff;letter-spacing:1px;margin:6px 0 14px}
+  .wcard .acts{display:flex;gap:8px}
+  .wcard .acts a,.wcard .acts button{flex:1;text-align:center;text-decoration:none;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);font-size:13px;cursor:pointer}
+  .wcard .acts a.primary{background:linear-gradient(135deg,#2b5dae,#4a3f9e);border-color:#3b5a94;font-weight:600}
+  @media(max-width:900px){main{grid-template-columns:1fr}aside{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"></div><b>反代本地</b>
+  <span class="pill" id="p-auth">auth …</span>
+  <span class="pill" id="p-ws">…</span>
+  <span class="pill" id="p-pool">pool …</span>
+  <span class="pill" id="p-model">…</span>
+  <div class="grow"></div>
+  <a class="pill group" href="https://qm.qq.com/q/NBX5cnLfIC" target="_blank" rel="noopener">交流群 1130166963</a>
+  <button class="sm" id="btn-reload">刷新全部</button>
+</header>
+<div id="banner"></div>
+
+<main>
+  <aside>
+    <div class="fld">
+      <label>模型</label>
+      <select id="model"></select>
+    </div>
+    <div class="fld">
+      <label>System</label>
+      <textarea id="system" rows="2">你是反代本地的助手，回答简洁准确。</textarea>
+    </div>
+    <div class="row">
+      <div class="fld"><label>max_tokens</label><input id="maxtok" type="number" value="2048" step="256" /></div>
+      <div class="fld"><label>temp</label><input id="temp" type="number" value="0.7" min="0" max="2" step="0.1" /></div>
+    </div>
+    <label class="chk"><input id="tools" type="checkbox" checked /> 工具 read_file / list_dir</label>
+    <label class="chk"><input id="stream" type="checkbox" checked /> 流式</label>
+
+    <div class="fld">
+      <label>账号池</label>
+      <div id="pool"></div>
+    </div>
+
+    <div class="fld">
+      <label>添加账号（粘贴 access_token）</label>
+      <textarea id="newtok" rows="3" placeholder="eyJhbGciOiJSUzI1NiIs…"></textarea>
+      <input id="newallow" placeholder="模型白名单，逗号分隔，留空=全部" />
+      <div class="row">
+        <button class="primary" id="btn-add">添加 / 更新</button>
+        <button id="btn-grab">获取方法</button>
+      </div>
+    </div>
+
+    <div class="kv" id="acct"></div>
+  </aside>
+
+  <section style="display:flex;flex-direction:column;min-height:0">
+    <div class="tabs">
+      <div class="tab on" data-pane="chat">对话</div>
+      <div class="tab" data-pane="models">模型矩阵</div>
+      <div class="tab" data-pane="usage">用量与花费</div>
+      <div class="tab" data-pane="cache">缓存策略</div>
+    </div>
+
+    <div class="pane on" id="pane-chat">
+      <div id="log"><div class="empty">选模型 → 输入问题。<br/>工具调用、流式、缓存命中、花费都会实时显示。</div></div>
+      <div id="stats"></div>
+      <footer>
+        <textarea id="input" placeholder="Enter 发送 / Shift+Enter 换行"></textarea>
+        <button class="primary" id="send" style="flex:none;min-width:88px">发送</button>
+      </footer>
+    </div>
+
+    <div class="pane" id="pane-models">
+      <div class="tablewrap"><table id="tbl-models"><thead><tr>
+        <th>模型 ID</th><th>名称</th><th>类型</th><th>协议</th><th>授权</th><th>in/1k</th><th>out/1k</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="pane" id="pane-usage">
+      <div class="tablewrap"><table id="tbl-usage"><thead><tr>
+        <th>时间</th><th>模型</th><th>prompt</th><th>cached</th><th>命中率</th><th>completion</th><th>≈credits</th><th>通道</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="pane" id="pane-cache">
+      <div class="tablewrap"><table id="tbl-cache"><thead><tr>
+        <th>模型</th><th>协议</th><th>缓存机制</th><th>调用数</th><th>实测命中率</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+</main>
+
+<div id="welcome">
+  <div class="wcard">
+    <h3>反代本地 已启动</h3>
+    <p>本项目开源免费，更新与问题反馈都在交流群内。</p>
+    <div class="qno">QQ 群 1130166963</div>
+    <div class="acts">
+      <a class="primary" href="https://qm.qq.com/q/NBX5cnLfIC" target="_blank" rel="noopener">加入交流群</a>
+      <button id="welcome-close">先看看</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const API = location.origin;
+const TOOLS = [
+  { type:'function', function:{ name:'read_file', description:'读取文本文件', parameters:{ type:'object', properties:{ path:{ type:'string' } }, required:['path'] } } },
+  { type:'function', function:{ name:'list_dir', description:'列出目录', parameters:{ type:'object', properties:{ path:{ type:'string' } }, required:[] } } }
+];
+let history = [], busy = false, lastSent = null, STATUS = null;
+
+function toast(msg, bad) {
+  const d = document.createElement('div');
+  d.className = 'toast' + (bad ? ' bad' : '');
+  d.textContent = msg;
+  $('toast').appendChild(d);
+  setTimeout(() => d.remove(), 4200);
+}
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+
+async function loadStatus() {
+  const j = await (await fetch(API + '/api/status')).json();
+  STATUS = j;
+  const w = j.workspace || {};
+  $('p-auth').textContent = j.ok ? `auth ${j.auth.source} ${Math.round(j.auth.expIn / 60)}min` : 'no token';
+  $('p-auth').className = 'pill ' + (j.ok ? 'ok' : 'bad');
+  $('p-ws').textContent = `plan ${w.plan || '?'} · ${w.credits ?? '?'} cr`;
+  $('p-ws').className = 'pill ' + (j.lowCredits ? 'bad' : 'ok');
+  $('p-model').textContent = $('model').value || '-';
+  $('banner').className = j.lowCredits ? 'show' : '';
+  if (j.lowCredits) {
+    $('banner').innerHTML = `<b>额度低</b>：活跃号 ${w.credits} credits（阈值 ${w.threshold}）。每日 100 credits，北京 08:00 重置；或添加新号。`;
+  }
+  $('acct').innerHTML = `<b>workspace</b> ${w.id || '-'}<br/><b>目录</b> ${(j.matrix||[]).length} · <b>可对话</b> ${(j.chat||[]).length} · <b>路由池</b> ${(j.pool||[]).length}`;
+
+  const sel = $('model');
+  const keep = sel.value;
+  sel.innerHTML = '';
+  const mk = (label, items, dis) => {
+    if (!items.length) return;
+    const g = document.createElement('optgroup');
+    g.label = label;
+    for (const m of items) {
+      const o = document.createElement('option');
+      o.value = m.id;
+      o.textContent = m.name || m.id;
+      if (dis) o.disabled = true;
+      g.appendChild(o);
+    }
+    sel.appendChild(g);
+  };
+  const chat = j.chat || [], pool = j.pool || [], matrix = j.matrix || [];
+  const entChat = new Set(chat.map((m) => m.id));
+  mk(`可用 ${chat.length}`, chat, false);
+  mk(`路由池 ${pool.length}`, pool.filter((m) => !entChat.has(m.id)), false);
+  const others = matrix.filter((m) => !entChat.has(m.id) && !pool.some((p) => p.id === m.id));
+  mk(`未授权/非对话 ${others.length}`, others, true);
+  const prefer = ['gpt-6.1-sol', 'minimax/minimax-m3', 'minimax-m3', 'kimi-k3',
+                  'anthropic/claude-opus-4.8', 'openai/gpt-5.4'];
+  const def = prefer.find((p) => entChat.has(p))
+    || chat.find((m) => m.protocol !== 'typesafe_decisions')?.id
+    || chat[0]?.id || pool[0]?.id || '';
+  sel.value = keep && [...sel.options].some((o) => o.value === keep && !o.disabled) ? keep : def;
+  $('p-model').textContent = sel.value || '-';
+
+  renderModels(matrix);
+}
+
+function renderModels(matrix) {
+  const tb = $('tbl-models').querySelector('tbody');
+  const rows = [...matrix].sort((a, b) => (a.entitled === b.entitled ? 0 : a.entitled ? -1 : 1));
+  tb.innerHTML = rows.map((m) => `<tr class="${m.entitled ? '' : 'dim'}">
+    <td class="mono">${esc(m.id)}</td><td>${esc(m.name)}</td><td>${esc(m.type)}</td>
+    <td class="mono">${esc(m.protocol || '-')}</td>
+    <td class="${m.entitled ? 'ok' : 'bad'}">${m.entitled ? '✓' : '✗'}</td>
+    <td class="mono">${m.price?.in ?? '-'}</td><td class="mono">${m.price?.out ?? '-'}</td></tr>`).join('');
+}
+
+async function loadPool(refresh) {
+  const j = await (await fetch(API + '/api/accounts' + (refresh ? '?refresh=1' : ''))).json();
+  const box = $('pool');
+  box.innerHTML = '';
+  (j.accounts || []).forEach((a) => {
+    const el = document.createElement('div');
+    el.className = 'acct-row' + (a.active ? ' on' : '');
+    const color = a.ready ? '#3ddc97' : (a.cooldown ? '#ff6b6b' : '#f5c451');
+    el.innerHTML = `<span class="dot" style="background:${color}"></span>
+      <span class="mail" title="${esc(a.email)}">${esc(a.email)}</span>
+      <span class="cr">${a.credits ?? '?'}/${a.threshold ?? '-'}</span>`;
+    const use = document.createElement('button'); use.className = 'sm'; use.textContent = '用';
+    use.onclick = async () => {
+      await fetch(API + '/api/switch', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ idx: a.idx }) });
+      toast('已切换到 ' + a.email); loadPool(); loadStatus();
+    };
+    const edit = document.createElement('button'); edit.className = 'sm'; edit.textContent = '改';
+    edit.onclick = async () => {
+      const v = prompt('模型白名单（逗号分隔，留空=全部）', (a.models || []).join(','));
+      if (v === null) return;
+      const models = v.split(',').map((s) => s.trim()).filter(Boolean);
+      const r = await fetch(API + '/api/account/update', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ idx: a.idx, models }) });
+      const rr = await r.json();
+      toast(rr.ok ? '白名单：' + (models.length ? models.join(', ') : '全部') : '更新失败', !rr.ok);
+      loadPool();
+    };
+    const del = document.createElement('button'); del.className = 'sm danger'; del.textContent = '删';
+    del.onclick = async () => {
+      if (!confirm('移除账号 ' + a.email + ' ?')) return;
+      await fetch(API + '/api/remove', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ idx: a.idx }) });
+      toast('已移除'); loadPool(); loadStatus();
+    };
+    el.append(use, edit, del);
+    box.appendChild(el);
+  });
+  if (!(j.accounts || []).length) box.innerHTML = '<div class="kv">池为空</div>';
+  $('p-pool').textContent = 'pool ' + (j.count || 0);
+  $('p-pool').className = 'pill ' + ((j.accounts || []).some((a) => a.ready) ? 'ok' : 'warn');
+}
+
+$('btn-add').onclick = async () => {
+  const tok = $('newtok').value.trim();
+  if (!tok) return toast('先粘贴 access_token', true);
+  const allow = $('newallow').value.split(',').map((s) => s.trim()).filter(Boolean);
+  $('btn-add').disabled = true;
+  try {
+    const r = await fetch(API + '/ingest-token', { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ token: tok, models: allow.length ? allow : undefined }) });
+    const j = await r.json();
+    if (j.ok) { toast(`已加入 ${j.account?.email} · credits ${j.account?.credits} · 池 ${j.poolSize}`); $('newtok').value = ''; $('newallow').value = ''; }
+    else toast('添加失败：' + (j.verify?.body || j.err || '未知'), true);
+    loadPool(); loadStatus();
+  } catch (e) { toast('添加失败：' + e.message, true); }
+  $('btn-add').disabled = false;
+};
+$('btn-grab').onclick = () => alert("在已登录 enter.converge.ai 的 Console 运行：\n\n(async()=>{const j=await(await fetch('/auth/session?include=access_token')).json();console.log(j.accessToken);copy(j.accessToken)})()\n\n然后把 token 粘到上面输入框。");
+
+async function loadUsage() {
+  const j = await (await fetch(API + '/api/usage')).json();
+  const tb = $('tbl-usage').querySelector('tbody');
+  tb.innerHTML = (j.last || []).map((r) => `<tr>
+    <td class="mono">${esc(r.t.slice(11,19))}</td><td class="mono">${esc(r.model)}</td>
+    <td class="mono">${r.prompt}</td><td class="mono">${r.cached}</td>
+    <td><div class="bar"><i style="width:${Math.min(100, r.cacheRate || 0)}%"></i></div><span class="mono">${r.cacheRate}%</span></td>
+    <td class="mono">${r.completion}</td><td class="mono">${r.estCredits ?? '-'}</td><td class="mono">${esc(r.via || '')}</td></tr>`).join('');
+}
+async function loadCache() {
+  const j = await (await fetch(API + '/api/cache-report')).json();
+  const tb = $('tbl-cache').querySelector('tbody');
+  tb.innerHTML = j.rows.map((r) => `<tr class="${r.calls ? '' : 'dim'}">
+    <td class="mono">${esc(r.model)}</td><td class="mono">${esc(r.protocol)}</td><td>${esc(r.policy)}</td>
+    <td class="mono">${r.calls}</td><td class="mono">${r.cacheRate == null ? '-' : r.cacheRate + '%'}</td></tr>`).join('');
+}
+
+document.querySelectorAll('.tab').forEach((t) => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('on', x === t));
+  document.querySelectorAll('.pane').forEach((p) => p.classList.toggle('on', p.id === 'pane-' + t.dataset.pane));
+  if (t.dataset.pane === 'usage') loadUsage();
+  if (t.dataset.pane === 'cache') loadCache();
+});
+
+function addMsg(cls, who, text) {
+  const d = document.createElement('div');
+  d.className = 'msg ' + cls;
+  d.innerHTML = `<div class="who">${esc(who)}</div><div class="bubble"></div>`;
+  d.querySelector('.bubble').textContent = text;
+  $('log').appendChild(d);
+  $('log').scrollTop = $('log').scrollHeight;
+  return d.querySelector('.bubble');
+}
+function setStats(o) {
+  const p = [];
+  if (o.model) p.push(`model <b>${esc(o.model)}</b>`);
+  if (o.latency != null) p.push(`延迟 <b>${o.latency}ms</b>`);
+  if (o.prompt != null) p.push(`prompt <b>${o.prompt}</b>`);
+  if (o.completion != null) p.push(`completion <b>${o.completion}</b>`);
+  if (o.cached != null) p.push(`缓存 <b>${o.cached}</b>${o.prompt ? ` (${Math.round(o.cached / o.prompt * 100)}%)` : ''}`);
+  if (o.rounds != null) p.push(`工具回合 <b>${o.rounds}</b>`);
+  $('stats').innerHTML = p.join(' · ');
+}
+function buildBody(msgs) {
+  const b = { model: $('model').value, messages: msgs, max_tokens: +$('maxtok').value || 2048 };
+  const t = parseFloat($('temp').value); if (!isNaN(t)) b.temperature = t;
+  const sys = $('system').value.trim();
+  if (sys) b.messages = [{ role: 'system', content: sys }, ...msgs];
+  if ($('tools').checked) { b.tools = TOOLS; b.tool_choice = 'auto'; }
+  return b;
+}
+async function execTool(name, args) {
+  const r = await fetch(API + '/exec-tool', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ name, args }) });
+  return (await r.json()).content ?? '';
+}
+async function callModel(b, onDelta) {
+  const t0 = performance.now();
+  if (!b.stream) {
+    const r = await fetch(API + '/v1/chat/completions', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(b) });
+    const txt = await r.text();
+    if (r.status !== 200) throw new Error('HTTP ' + r.status + ' ' + txt.slice(0, 240));
+    const j = JSON.parse(txt);
+    onDelta(j.choices?.[0]?.message?.content || '');
+    return { msg: j.choices?.[0]?.message || {}, usage: j.usage || {}, latency: Math.round(performance.now() - t0) };
+  }
+  const r = await fetch(API + '/v1/chat/completions', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ ...b, stream: true }) });
+  if (r.status !== 200) throw new Error('HTTP ' + r.status + ' ' + (await r.text()).slice(0, 240));
+  const reader = r.body.getReader(), dec = new TextDecoder();
+  let buf = '', content = '', usage = {}, calls = [];
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    const lines = buf.split('\n'); buf = lines.pop();
+    for (const ln of lines) {
+      if (!ln.startsWith('data:')) continue;
+      const d = ln.slice(5).trim();
+      if (!d || d === '[DONE]') continue;
+      let o; try { o = JSON.parse(d); } catch { continue; }
+      const delta = o.choices?.[0]?.delta || {};
+      if (delta.content) { content += delta.content; onDelta(delta.content); }
+      if (delta.tool_calls) for (const tc of delta.tool_calls) {
+        const i = tc.index ?? 0;
+        calls[i] = calls[i] || { id: tc.id || '', type: 'function', function: { name: '', arguments: '' } };
+        if (tc.id) calls[i].id = tc.id;
+        if (tc.function?.name) calls[i].function.name += tc.function.name;
+        if (tc.function?.arguments) calls[i].function.arguments += tc.function.arguments;
+      }
+      if (o.usage) usage = o.usage;
+    }
+  }
+  return { msg: { role: 'assistant', content: content || null, tool_calls: calls.filter(Boolean) }, usage, latency: Math.round(performance.now() - t0) };
+}
+async function send() {
+  const text = $('input').value.trim();
+  if (!text || busy) return;
+  $('input').value = ''; busy = true; $('send').disabled = true;
+  if ($('log').querySelector('.empty')) $('log').innerHTML = '';
+  history.push({ role: 'user', content: text });
+  addMsg('user', 'you', text);
+  lastSent = text;
+  let rounds = 0, u = { prompt: 0, completion: 0, cached: 0 }, lat = 0;
+  try {
+    while (rounds < 5) {
+      rounds++;
+      const bubble = addMsg('assistant', 'assistant' + (rounds > 1 ? ` · 第${rounds}轮` : ''), '');
+      bubble.classList.add('cursor');
+      let res;
+      try { res = await callModel(buildBody(history), (d) => { bubble.textContent += d; $('log').scrollTop = $('log').scrollHeight; }); }
+      catch (e) { bubble.classList.remove('cursor'); if (!bubble.textContent) bubble.textContent = '⚠️ ' + e.message; break; }
+      bubble.classList.remove('cursor');
+      lat += res.latency;
+      const us = res.usage || {};
+      u.prompt += us.prompt_tokens || 0; u.completion += us.completion_tokens || 0;
+      u.cached += us.prompt_tokens_details?.cached_tokens || 0;
+      const m = res.msg || {};
+      history.push({ role: 'assistant', content: m.content || '', ...(m.tool_calls?.length ? { tool_calls: m.tool_calls } : {}) });
+      if (!m.tool_calls?.length) break;
+      for (const tc of m.tool_calls) {
+        const nm = tc.function?.name || 'tool';
+        let args = {}; try { args = JSON.parse(tc.function?.arguments || '{}'); } catch {}
+        addMsg('tool', 'tool → ' + nm, JSON.stringify(args));
+        const out = await execTool(nm, args);
+        addMsg('tool', 'tool ← ' + nm, out.slice(0, 4000));
+        history.push({ role: 'tool', tool_call_id: tc.id || nm, content: out.slice(0, 20000) });
+      }
+    }
+    setStats({ model: $('model').value, latency: lat, rounds, prompt: u.prompt, completion: u.completion, cached: u.cached });
+    loadUsage();
+  } finally { busy = false; $('send').disabled = false; $('input').focus(); }
+}
+$('send').onclick = send;
+$('input').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
+$('model').onchange = () => { $('p-model').textContent = $('model').value; };
+$('btn-reload').onclick = () => { loadStatus(); loadPool(true); loadUsage(); loadCache(); toast('已刷新'); };
+
+/* ---------------- 欢迎弹窗（引流） ---------------- */
+function showWelcome() {
+  try {
+    if (sessionStorage.getItem('cvg-welcome-seen')) return;
+    sessionStorage.setItem('cvg-welcome-seen', '1');
+  } catch (e) {}
+  const el = $('welcome');
+  if (el) el.classList.add('show');
+}
+(function bindWelcome() {
+  const el = $('welcome');
+  const btn = $('welcome-close');
+  if (btn) btn.onclick = () => el.classList.remove('show');
+  if (el) el.addEventListener('click', (e) => { if (e.target.id === 'welcome') el.classList.remove('show'); });
+})();
+
+(async () => {
+  await loadStatus();
+  await loadPool(false);
+  loadUsage(); loadCache();
+  if (typeof showWelcome === 'function') showWelcome();
+  setInterval(() => loadPool(false), 60000);
+})();
+</script>
+</body>
+</html>

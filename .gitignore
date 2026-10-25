@@ -1,0 +1,18 @@
+# 运行时生成的凭证文件
+accounts.json
+jwt.txt
+usage.jsonl
+cookie*.txt
+cf_clearance.txt
+tokens.txt
+accounts_import.json
+ck_*.json
+# 浏览器配置目录
+seed-profile-*/
+renew-profile-*/
+# 日志与缓存
+*.log
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db

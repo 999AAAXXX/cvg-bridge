@@ -1,0 +1,39 @@
+{
+  "port": 8097,
+  "gateway": "https://api.enter.pro/code/api/v1",
+  "origin": "https://enter.converge.ai",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  "auth": {
+    "cookieName": "session",
+    "cfClearance": ""
+  },
+  "cache": {
+    "enabled": true,
+    "promptCacheKey": true,
+    "retention": "24h",
+    "anthropicBreakpoints": true,
+    "geminiImplicit": true,
+    "diskCache": false,
+    "diskCacheTtl": 3600
+  },
+  "forceResponsesPath": false,
+  "debug": false,
+  "budget": {
+    "autoDowngrade": true,
+    "cheapModel": "converge/minimax/minimax-m2.5",
+    "minCredits": 10
+  },
+  "toolRoot": "./",
+  "pool": {
+    "tryAnyway": true
+  },
+  "probe": {
+    "ttlHours": 24,
+    "auto": false
+  },
+  "stream": {
+    "smooth": true,
+    "chunkChars": 4,
+    "tickMs": 22
+  }
+}
