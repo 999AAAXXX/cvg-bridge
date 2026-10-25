@@ -12,6 +12,84 @@
 
 ---
 
+## English
+
+**cvg-bridge** exposes **Converge / enter.pro** models as local **OpenAI- and Anthropic-compatible** APIs, so you can use them from [opencode](https://github.com/sst/opencode), any OpenAI SDK, or the built-in web console.
+
+Zero dependencies (Node 18+). Multi-account pooling with automatic failover, prompt caching, tool calling, smoothed streaming, and a single-page console.
+
+### Features
+
+- **OpenAI compatible** — `/v1/chat/completions` with streaming and `tool_calls`
+- **Anthropic native** — `/v1/messages` keeping `cache_control` breakpoints (up to 100% cache hit on Claude)
+- **Account pool** — deduplicated by `sub`, per-account model allowlist, automatic rotation on 401 / quota errors, retrying the same request
+- **Prompt cache** — stable `prompt_cache_key` (sha256 of model + system + tools) for OpenAI-family models, automatic `cache_control` breakpoints for Claude, implicit prefix caching for Gemini
+- **Smoothed streaming** — re-chunks buffered upstream responses into 4 chars / 22 ms so output appears incrementally
+- **Web console** — chat, tool calls, model matrix, usage & spend, cache policy, account management in one page
+- **Usage ledger** — prompt / cached / completion / estimated credits per call, persisted to `usage.jsonl`
+
+### Quick start
+
+```bash
+git clone https://github.com/999AAAXXX/cvg-bridge.git
+cd cvg-bridge
+node server.js
+# open http://127.0.0.1:8097/
+```
+
+On Windows just double-click `一键启动.cmd` — it checks Node, starts the server, opens the console and the community group link.
+
+### Add an account
+
+Open the logged-in site, press F12 → Console:
+
+```js
+(async()=>{const j=await(await fetch('/auth/session?include=access_token')).json();
+const r=await fetch('http://127.0.0.1:8097/ingest-token',{method:'POST',
+  headers:{'Content-Type':'application/json'},body:JSON.stringify({token:j.accessToken})});
+console.log('PUSH',r.status,await r.text())})()
+```
+
+Optionally pass a model allowlist: `{"token":"...","models":["gpt-6.1-sol"]}`.
+
+### opencode
+
+Merge the `provider` block from `opencode.converge.example.json` into `~/.config/opencode/opencode.json`, then:
+
+```bash
+opencode models | findstr converge
+opencode -m converge/gpt-6.1-sol
+```
+
+### Endpoints
+
+`GET /v1/models`, `POST /v1/chat/completions`, `POST /v1/messages`, `POST /v1/responses`,
+`GET /api/status`, `GET /api/accounts`, `POST /api/switch`, `POST /api/account/update`,
+`POST /api/remove`, `GET /api/credits`, `GET /api/usage`, `GET /api/cache-report`,
+`POST /api/probe`, `POST /exec-tool`, `POST /ingest-token`.
+
+Full parameter reference and troubleshooting: see the Chinese sections above.
+
+### Token renewal
+
+Access tokens last ~24 h. With a cookie export (`appSession`, `converge_session`):
+
+```bash
+python renew-cookie.py --file cookies.json --headed --push
+```
+
+Do **not** override the User-Agent — the default UA is what passes Cloudflare.
+
+### Community
+
+QQ group **1130166963** · <https://qm.qq.com/q/NBX5cnLfIC>
+
+### License
+
+MIT
+
+---
+
 ## 特性
 
 | 能力 | 说明 |
